@@ -1,0 +1,25 @@
+<div class="card p-3">
+  <div class="row g-3 align-items-center">
+    <div class="col-md-3 text-center">
+      <img src="<%= @pokemon.image_url %>" alt="<%= @pokemon.name %>" style="height:160px;">
+    </div>
+
+    <div class="col-md-9">
+      <h2 class="fw-bold mb-1"><%= @pokemon.name %></h2>
+      <p class="mb-2">
+        <strong>Pokedex #: </strong> <%= @pokemon.pokedex_number || "-" %>
+      </p>
+
+      <p class="mb-3">
+        <% if @pokemon.primary_type.present? %>
+          <span class="type-badge <%= pokemon_type_class(@pokemon.primary_type) %>"><%= @pokemon.primary_type %></span>
+        <% end %>
+        <% if @pokemon.secondary_type.present? %>
+          <span class="type-badge <%= pokemon_type_class(@pokemon.secondary_type) %>"><%= @pokemon.secondary_type %></span>
+        <% end %>
+      </p>
+
+      <%= link_to "Back", root_path, class: "btn btn-secondary btn-sm" %>
+    </div>
+  </div>
+</div>

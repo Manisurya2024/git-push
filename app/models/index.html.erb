@@ -1,0 +1,19 @@
+<h1>Pokemons</h1>
+
+<% if @pokemons.blank? %>
+  <p>No pokemons found (try again later).</p>
+<% else %>
+  <ul style="list-style:none; padding:0;">
+    <% @pokemons.each do |p| %>
+      <li style="display:flex; align-items:center; gap:12px; margin-bottom:10px;">
+        <% if p[:sprite].present? %>
+          <img src="<%= p[:sprite] %>" alt="<%= p[:name] %>" width="64" height="64">
+        <% end %>
+        <strong style="text-transform:capitalize;"><%= p[:name] %></strong>
+        <% if p[:id] %>
+          <span style="color:#666">#<%= p[:id] %></span>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

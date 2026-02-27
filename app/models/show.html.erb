@@ -1,0 +1,13 @@
+<h1><%= @item[:name].to_s.capitalize %></h1>
+
+<% if @item[:image].present? %>
+  <%= image_tag @item[:image], alt: @item[:name], width: 200 %>
+<% end %>
+
+<ul>
+  <li><strong>Types:</strong> <%= (@item[:types] || []).join(", ") %></li>
+  <li><strong>Height:</strong> <%= @item[:height] %></li>
+  <li><strong>Weight:</strong> <%= @item[:weight] %></li>
+</ul>
+
+<%= link_to 'Back', root_path %>
