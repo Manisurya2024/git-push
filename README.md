@@ -1,24 +1,34 @@
-# README
+# Pokédex Rails Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Rails Pokédex Explorer – School Assignment
 
-Things you may want to cover:
+## Requirements
+Ruby 3.x
+Rails 7.x
+SQLite3
 
-* Ruby version
+## Setup Instructions
 
-* System dependencies
+Install gems
+bundle install
 
-* Configuration
+Create database
+rails db:create
 
-* Database creation
+Run migrations
+rails db:migrate
 
-* Database initialization
+Seed Pokémon data
+rails db:seed
 
-* How to run the test suite
+## Run the Application
+rails server
 
-* Services (job queues, cache servers, search engines, etc.)
+Open browser:
+http://localhost:3000
 
-* Deployment instructions
-
-* ...
+## Features
+- Fetches Pokémon from API
+- Stores them in database
+- Displays Pokémon list
+- Shows Pokémon details
